@@ -26,6 +26,8 @@ public class Ticket {
 
     Price price;
 
+    Price desc;
+
     public String getFrom() {
         return from;
     }
@@ -68,6 +70,14 @@ public class Ticket {
 
     public void setPrice(Price price) {
         this.price = price;
+    }
+
+    public Price getDesc() {
+        return desc;
+    }
+
+    public void setDesc(Price desc) {
+        this.desc = desc;
     }
 
     @Override

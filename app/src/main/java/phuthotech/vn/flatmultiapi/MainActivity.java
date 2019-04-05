@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements TicketsAdapter.Ti
      */
     private Observable<List<Ticket>> getTickets(String from, String to) {
         return apiService.searchTickets(from, to)
-                .toObservable()
+                //.toObservable()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements TicketsAdapter.Ti
     private Observable<Ticket> getPriceObservable(final Ticket ticket) {
         return apiService
                 .getPrice(ticket.getFlightNumber(), ticket.getFrom(), ticket.getTo())
-                .toObservable()
+                //.toObservable()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(new Function<Price, Ticket>() {
